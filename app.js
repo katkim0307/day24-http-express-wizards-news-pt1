@@ -3,6 +3,10 @@ const morgan = require("morgan");
 const postBank = require("./postBank");
 
 const app = express();
+// serving static files in Express (public folder) 
+// http://expressjs.com/en/starter/static-files.html
+app.use(express.static('public'));
+
 
 app.use(morgan('dev'));
 
