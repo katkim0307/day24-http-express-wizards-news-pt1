@@ -111,7 +111,7 @@ const data = [
         id: 14,
         upvotes: 10,
         title: "How to tell which spell used on a bug?",
-        content: "Question: Are ther any non-jinx incantations available to detect which spell used on a bug?",
+        content: "Question: Are there any non-jinx incantations available to detect which spell used on a bug?",
         name: "Lupin",
         date: new Date()
     }
