@@ -71,7 +71,32 @@ app.get('/posts/:id', (req, res) => {
     </div>
   </body>
   </html>`
+
+  // ERROR HANDLING
+  if(!post.id) {
+    res.status(404)
+    const errHTML = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Wizard News</title>
+      <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+      <header><img src="/logo.png">Wizard News</header>
+      <div class="not-found">
+        <p>Accio Page! 🧙‍♀️ ... Page Not Found</p>
+        <img src="/dumbledore-404.gif" />
+      </div>
+    </body>
+    </html>
+    `
+    res.send(errHTML)
+    // catching error
+    throw new Error('Post Not Found')
+  } else {
   res.send(html);
+  }
 })
 
 app.listen(1337);
