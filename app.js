@@ -26,7 +26,8 @@ app.get("/", (req, res) => {
       ${posts.map(post => `
         <div class="news-item">
           <p>
-            <span class="news-position">${post.id}.</span>${post.title}
+            <span class="news-position">${post.id}.</span>
+            <a href="/posts/${post.id}">${post.title}</a>
             <small>(by ${post.name})</small>
           </p>
           <small class="news-info">
@@ -43,6 +44,8 @@ app.get("/", (req, res) => {
 });
 
 // ADDING DYNAMIC ROUTING with PARAMETERS
+
+// SINGLE-POST ROUTE
 // localhost:1337/posts/1
 app.get('/posts/:id', (req, res) => {
   const id = req.params.id;
