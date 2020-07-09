@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const postBank = require("./postBank");
+const { restart } = require("nodemon");
 
 const app = express();
 // serving static files in Express (public folder) 
@@ -98,5 +99,16 @@ app.get('/posts/:id', (req, res) => {
   res.send(html);
   }
 })
+
+/*
+// ERROR HANDLER - https://expressjs.com/en/guide/error-handling.html
+const errorHandler = (err, req, res, next) => {
+  if(res.headersSent) {
+    return next(err)
+  }
+  res.status(500)
+  res.render('ERROR', {error: err})
+}
+*/
 
 app.listen(1337);
