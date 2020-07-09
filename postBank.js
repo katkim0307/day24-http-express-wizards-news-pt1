@@ -135,3 +135,6 @@ const find = (id) => {
 }
 
 module.exports = { list: list, find: find };
+
+
+// Next step: create a route that lists all post titles and authors.
